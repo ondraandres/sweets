@@ -1,0 +1,13 @@
+platform :ios, '8.0'
+
+pod 'Facebook-iOS-SDK', '~> 3.21'
+pod 'FXForms', '~> 1.2'
+pod 'RESideMenu', '~> 4.0.7'
+pod 'KBRoundedButton', '~> 1.0'
+pod 'TCTableViewSearchController'
+pod 'FontAwesomeKit', '~> 2.2'
+pod 'PQFCustomLoaders', '~> 0.0'
+pod 'Parse', '~> 1.6'
+pod 'ParseFacebookUtils', '~> 1.6'
+pod 'ParseCrashReporting', '~> 1.6'
+pod 'TPKeyboardAvoiding', '~> 1.2'

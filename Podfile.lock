@@ -1,0 +1,64 @@
+PODS:
+  - Bolts (1.1.3)
+  - Facebook-iOS-SDK (3.22.0):
+    - Bolts (~> 1.0)
+  - FontAwesomeKit (2.2.0):
+    - FontAwesomeKit/Core (= 2.2.0)
+    - FontAwesomeKit/FontAwesome (= 2.2.0)
+    - FontAwesomeKit/FoundationIcons (= 2.2.0)
+    - FontAwesomeKit/IonIcons (= 2.2.0)
+    - FontAwesomeKit/Zocial (= 2.2.0)
+  - FontAwesomeKit/Core (2.2.0)
+  - FontAwesomeKit/FontAwesome (2.2.0):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/FoundationIcons (2.2.0):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/IonIcons (2.2.0):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Zocial (2.2.0):
+    - FontAwesomeKit/Core
+  - FXForms (1.2.12)
+  - KBRoundedButton (1.0.2)
+  - Parse (1.6.2):
+    - Bolts (~> 1.1)
+  - ParseCrashReporting (1.6.2):
+    - Parse (~> 1.6.2)
+  - ParseFacebookUtils (1.6.2):
+    - Facebook-iOS-SDK (~> 3.20)
+    - Parse (~> 1.6.2)
+  - PQFCustomLoaders (0.0.1):
+    - UIColor+FlatColors
+  - RESideMenu (4.0.7)
+  - TCTableViewSearchController (0.1.0)
+  - TPKeyboardAvoiding (1.2.4)
+  - UIColor+FlatColors (0.0.2)
+
+DEPENDENCIES:
+  - Facebook-iOS-SDK (~> 3.21)
+  - FontAwesomeKit (~> 2.2)
+  - FXForms (~> 1.2)
+  - KBRoundedButton (~> 1.0)
+  - Parse (~> 1.6)
+  - ParseCrashReporting (~> 1.6)
+  - ParseFacebookUtils (~> 1.6)
+  - PQFCustomLoaders (~> 0.0)
+  - RESideMenu (~> 4.0.7)
+  - TCTableViewSearchController
+  - TPKeyboardAvoiding (~> 1.2)
+
+SPEC CHECKSUMS:
+  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
+  Facebook-iOS-SDK: 0eda8ff7120aada0a9c5f98552f7625da6c3440a
+  FontAwesomeKit: 61f0b4f12f1b11b7489bc7d1507a8692547f3857
+  FXForms: ae90610432a0a9cbb71e0180f202d0fff375881f
+  KBRoundedButton: eedaec9e13de7234276922e01cf25fccd24b3cde
+  Parse: 60d65108fe39da77ec16c9e51d74b4d296b21424
+  ParseCrashReporting: eb150f792ea987456f9ae4ccca4bbf9236c8ddd0
+  ParseFacebookUtils: 0b86cd67283c60d10e3ddc8427f989f5e60ebbd7
+  PQFCustomLoaders: 3f59916dce73c721a823a5bb21be28305329e775
+  RESideMenu: a9c1cd2e64e60e1d3166ddac01a83e215a0e4d30
+  TCTableViewSearchController: cb08b84e5cb8bf3df83f27237919a176dba10456
+  TPKeyboardAvoiding: 925e1e1912597d1a4956697eec3bd9656552153c
+  UIColor+FlatColors: 15506ef6472e26a751033f2f2469283800bcb906
+
+COCOAPODS: 0.35.0
