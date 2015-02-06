@@ -35,7 +35,7 @@
     [ParseCrashReporting enable];
     //
     // Uncomment and fill in with your Parse credentials:
-    [Parse setApplicationId:@"IhBj2JAv5YnJt22Ie3ZhXodFpSFBaCMXxSENyUY0" clientKey:@"sqsnaDliUGuehgfzWq2Gl91Sj0C8nyvRdAPvIyuf"];
+    [Parse setApplicationId:@"i1uMj0frMyGXW3WQMvuw1cjycFxEbF7obYUWUkzQ" clientKey:@"7PvneaqhjJseDCMIjxRZoJtFF905dZlYGaiOZMbC"];
     //
     // If you are using Facebook, uncomment and add your FacebookAppID to your bundle's plist as
     // described here: https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/

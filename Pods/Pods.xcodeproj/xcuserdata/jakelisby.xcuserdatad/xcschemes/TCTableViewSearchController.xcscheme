@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7CE7900506B2C4699ECBC23D"
+               BlueprintIdentifier = "F9664D96258B713CB5B48B2B"
                BuildableName = "TCTableViewSearchController.bundle"
                BlueprintName = "TCTableViewSearchController"
                ReferencedContainer = "container:Pods.xcodeproj">

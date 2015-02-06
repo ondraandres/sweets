@@ -44,7 +44,7 @@
 
 - (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController
 {
-    //NSLog(@"willHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeMenuButton" object:self];
 }
 
 - (void)sideMenu:(RESideMenu *)sideMenu didHideMenuViewController:(UIViewController *)menuViewController

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1705F8F81A817C80000FF5D8 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1705F8F71A817C80000FF5D8 /* LeftMenuViewController.m */; };
+		1705F8FC1A817E65000FF5D8 /* dashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1705F8FB1A817E65000FF5D8 /* dashboardViewController.m */; };
+		170B3AFF1A827FC500F6AFFA /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 170B3AFE1A827FC500F6AFFA /* SettingsViewController.m */; };
+		170B3B021A82803000F6AFFA /* userSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 170B3B011A82803000F6AFFA /* userSettingsForm.m */; };
 		175B0DEF1A7B17A700A5AC0A /* SweetsRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 175B0DEE1A7B17A700A5AC0A /* SweetsRootVC.m */; };
 		175B0DF41A7B20F100A5AC0A /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 175B0DF31A7B20F100A5AC0A /* SignInViewController.m */; };
 		17D931DD1A7AEC4A00557FB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D931DC1A7AEC4A00557FB3 /* main.m */; };
@@ -17,6 +21,13 @@
 		17D931EB1A7AEC4A00557FB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17D931E91A7AEC4A00557FB3 /* LaunchScreen.xib */; };
 		17D931F71A7AEC4A00557FB3 /* sweetsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D931F61A7AEC4A00557FB3 /* sweetsTests.m */; };
 		17D932051A7AFA5000557FB3 /* SRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D932041A7AFA5000557FB3 /* SRootVC.m */; };
+		17DB0FD51A83B8CC00372EDA /* NSString+USStateMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DB0FD31A83B8CC00372EDA /* NSString+USStateMap.m */; };
+		17DB0FD61A83B8CC00372EDA /* USStateAbbreviations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17DB0FD41A83B8CC00372EDA /* USStateAbbreviations.plist */; };
+		17DB0FD91A83BB8900372EDA /* ChangeStateToAbrev.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DB0FD81A83BB8900372EDA /* ChangeStateToAbrev.m */; };
+		17DB0FDD1A83DD4B00372EDA /* ConversationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DB0FDC1A83DD4B00372EDA /* ConversationsTableViewController.m */; };
+		17DB0FE01A8418EC00372EDA /* ConversationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DB0FDF1A8418EC00372EDA /* ConversationTableViewCell.m */; };
+		17DB0FE31A8423EC00372EDA /* ConversationErrorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DB0FE21A8423EC00372EDA /* ConversationErrorTableViewCell.m */; };
+		17DB0FE71A8426A000372EDA /* ConversationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DB0FE61A8426A000372EDA /* ConversationModel.m */; };
 		17F6D8C41A7BE554009FF358 /* connectUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6D8C31A7BE554009FF358 /* connectUserViewController.m */; };
 		E9D570553DFD2AFCA9D433A8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170838C06FD719D0BC602C6 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -32,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1705F8F61A817C80000FF5D8 /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
+		1705F8F71A817C80000FF5D8 /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		1705F8FA1A817E65000FF5D8 /* dashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dashboardViewController.h; path = userViews/dashboardViewController.h; sourceTree = "<group>"; };
+		1705F8FB1A817E65000FF5D8 /* dashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = dashboardViewController.m; path = userViews/dashboardViewController.m; sourceTree = "<group>"; };
+		170B3AFD1A827FC500F6AFFA /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Account/SettingsViewController.h; sourceTree = "<group>"; };
+		170B3AFE1A827FC500F6AFFA /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Account/SettingsViewController.m; sourceTree = "<group>"; };
+		170B3B001A82803000F6AFFA /* userSettingsForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = userSettingsForm.h; path = Account/userSettingsForm.h; sourceTree = "<group>"; };
+		170B3B011A82803000F6AFFA /* userSettingsForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = userSettingsForm.m; path = Account/userSettingsForm.m; sourceTree = "<group>"; };
 		175B0DED1A7B17A700A5AC0A /* SweetsRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SweetsRootVC.h; sourceTree = "<group>"; };
 		175B0DEE1A7B17A700A5AC0A /* SweetsRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SweetsRootVC.m; sourceTree = "<group>"; };
 		175B0DF21A7B20F100A5AC0A /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInViewController.h; path = Account/SignInViewController.h; sourceTree = "<group>"; };
@@ -51,6 +70,19 @@
 		17D931F61A7AEC4A00557FB3 /* sweetsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sweetsTests.m; sourceTree = "<group>"; };
 		17D932031A7AFA5000557FB3 /* SRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRootVC.h; sourceTree = "<group>"; };
 		17D932041A7AFA5000557FB3 /* SRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRootVC.m; sourceTree = "<group>"; };
+		17DB0FD21A83B8CC00372EDA /* NSString+USStateMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+USStateMap.h"; sourceTree = "<group>"; };
+		17DB0FD31A83B8CC00372EDA /* NSString+USStateMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+USStateMap.m"; sourceTree = "<group>"; };
+		17DB0FD41A83B8CC00372EDA /* USStateAbbreviations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = USStateAbbreviations.plist; sourceTree = "<group>"; };
+		17DB0FD71A83BB8900372EDA /* ChangeStateToAbrev.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeStateToAbrev.h; sourceTree = "<group>"; };
+		17DB0FD81A83BB8900372EDA /* ChangeStateToAbrev.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeStateToAbrev.m; sourceTree = "<group>"; };
+		17DB0FDB1A83DD4B00372EDA /* ConversationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConversationsTableViewController.h; path = Conversations/ConversationsTableViewController.h; sourceTree = "<group>"; };
+		17DB0FDC1A83DD4B00372EDA /* ConversationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConversationsTableViewController.m; path = Conversations/ConversationsTableViewController.m; sourceTree = "<group>"; };
+		17DB0FDE1A8418EC00372EDA /* ConversationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConversationTableViewCell.h; path = Conversations/ConversationTableViewCell.h; sourceTree = "<group>"; };
+		17DB0FDF1A8418EC00372EDA /* ConversationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConversationTableViewCell.m; path = Conversations/ConversationTableViewCell.m; sourceTree = "<group>"; };
+		17DB0FE11A8423EC00372EDA /* ConversationErrorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConversationErrorTableViewCell.h; path = Conversations/ConversationErrorTableViewCell.h; sourceTree = "<group>"; };
+		17DB0FE21A8423EC00372EDA /* ConversationErrorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConversationErrorTableViewCell.m; path = Conversations/ConversationErrorTableViewCell.m; sourceTree = "<group>"; };
+		17DB0FE51A8426A000372EDA /* ConversationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConversationModel.h; path = Conversations/ConversationModel.h; sourceTree = "<group>"; };
+		17DB0FE61A8426A000372EDA /* ConversationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConversationModel.m; path = Conversations/ConversationModel.m; sourceTree = "<group>"; };
 		17F6D8C21A7BE554009FF358 /* connectUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = connectUserViewController.h; path = Account/connectUserViewController.h; sourceTree = "<group>"; };
 		17F6D8C31A7BE554009FF358 /* connectUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = connectUserViewController.m; path = Account/connectUserViewController.m; sourceTree = "<group>"; };
 		1F680F82A20D444F998DD478 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,11 +109,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1705F8F91A817E48000FF5D8 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				1705F8FA1A817E65000FF5D8 /* dashboardViewController.h */,
+				1705F8FB1A817E65000FF5D8 /* dashboardViewController.m */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
 		175B0DF01A7B17AB00A5AC0A /* Navigation and Networking */ = {
 			isa = PBXGroup;
 			children = (
 				17D932031A7AFA5000557FB3 /* SRootVC.h */,
 				17D932041A7AFA5000557FB3 /* SRootVC.m */,
+				1705F8F61A817C80000FF5D8 /* LeftMenuViewController.h */,
+				1705F8F71A817C80000FF5D8 /* LeftMenuViewController.m */,
 			);
 			name = "Navigation and Networking";
 			sourceTree = "<group>";
@@ -93,6 +136,10 @@
 				175B0DF31A7B20F100A5AC0A /* SignInViewController.m */,
 				17F6D8C21A7BE554009FF358 /* connectUserViewController.h */,
 				17F6D8C31A7BE554009FF358 /* connectUserViewController.m */,
+				170B3AFD1A827FC500F6AFFA /* SettingsViewController.h */,
+				170B3AFE1A827FC500F6AFFA /* SettingsViewController.m */,
+				170B3B001A82803000F6AFFA /* userSettingsForm.h */,
+				170B3B011A82803000F6AFFA /* userSettingsForm.m */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -120,6 +167,9 @@
 		17D931D91A7AEC4A00557FB3 /* sweets */ = {
 			isa = PBXGroup;
 			children = (
+				17DB0FDA1A83DCFB00372EDA /* Conversations */,
+				17DB0FD11A83B8CC00372EDA /* Tools */,
+				1705F8F91A817E48000FF5D8 /* Dashboard */,
 				175B0DF11A7B20DA00A5AC0A /* Account */,
 				175B0DF01A7B17AB00A5AC0A /* Navigation and Networking */,
 				17D931DE1A7AEC4A00557FB3 /* AppDelegate.h */,
@@ -139,6 +189,7 @@
 		17D931DA1A7AEC4A00557FB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				17DB0FD41A83B8CC00372EDA /* USStateAbbreviations.plist */,
 				17D931DB1A7AEC4A00557FB3 /* Info.plist */,
 				17D931DC1A7AEC4A00557FB3 /* main.m */,
 			);
@@ -160,6 +211,32 @@
 				17D931F51A7AEC4A00557FB3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17DB0FD11A83B8CC00372EDA /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				17DB0FD21A83B8CC00372EDA /* NSString+USStateMap.h */,
+				17DB0FD31A83B8CC00372EDA /* NSString+USStateMap.m */,
+				17DB0FD71A83BB8900372EDA /* ChangeStateToAbrev.h */,
+				17DB0FD81A83BB8900372EDA /* ChangeStateToAbrev.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		17DB0FDA1A83DCFB00372EDA /* Conversations */ = {
+			isa = PBXGroup;
+			children = (
+				17DB0FDB1A83DD4B00372EDA /* ConversationsTableViewController.h */,
+				17DB0FDC1A83DD4B00372EDA /* ConversationsTableViewController.m */,
+				17DB0FDE1A8418EC00372EDA /* ConversationTableViewCell.h */,
+				17DB0FDF1A8418EC00372EDA /* ConversationTableViewCell.m */,
+				17DB0FE11A8423EC00372EDA /* ConversationErrorTableViewCell.h */,
+				17DB0FE21A8423EC00372EDA /* ConversationErrorTableViewCell.m */,
+				17DB0FE51A8426A000372EDA /* ConversationModel.h */,
+				17DB0FE61A8426A000372EDA /* ConversationModel.m */,
+			);
+			name = Conversations;
 			sourceTree = "<group>";
 		};
 		50EB8877A8872337EE839F48 /* Frameworks */ = {
@@ -264,6 +341,7 @@
 			files = (
 				17D931E61A7AEC4A00557FB3 /* Main.storyboard in Resources */,
 				17D931EB1A7AEC4A00557FB3 /* LaunchScreen.xib in Resources */,
+				17DB0FD61A83B8CC00372EDA /* USStateAbbreviations.plist in Resources */,
 				17D931E81A7AEC4A00557FB3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,10 +394,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				175B0DEF1A7B17A700A5AC0A /* SweetsRootVC.m in Sources */,
+				17DB0FD91A83BB8900372EDA /* ChangeStateToAbrev.m in Sources */,
 				17D932051A7AFA5000557FB3 /* SRootVC.m in Sources */,
+				17DB0FD51A83B8CC00372EDA /* NSString+USStateMap.m in Sources */,
+				1705F8F81A817C80000FF5D8 /* LeftMenuViewController.m in Sources */,
+				170B3B021A82803000F6AFFA /* userSettingsForm.m in Sources */,
+				17DB0FE31A8423EC00372EDA /* ConversationErrorTableViewCell.m in Sources */,
+				17DB0FE01A8418EC00372EDA /* ConversationTableViewCell.m in Sources */,
 				17D931E31A7AEC4A00557FB3 /* ViewController.m in Sources */,
+				17DB0FE71A8426A000372EDA /* ConversationModel.m in Sources */,
 				17D931E01A7AEC4A00557FB3 /* AppDelegate.m in Sources */,
 				17F6D8C41A7BE554009FF358 /* connectUserViewController.m in Sources */,
+				1705F8FC1A817E65000FF5D8 /* dashboardViewController.m in Sources */,
+				17DB0FDD1A83DD4B00372EDA /* ConversationsTableViewController.m in Sources */,
+				170B3AFF1A827FC500F6AFFA /* SettingsViewController.m in Sources */,
 				175B0DF41A7B20F100A5AC0A /* SignInViewController.m in Sources */,
 				17D931DD1A7AEC4A00557FB3 /* main.m in Sources */,
 			);
@@ -444,6 +532,7 @@
 			baseConfigurationReference = A7514447C0E8380160FD9863 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = sweets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -457,6 +546,7 @@
 			baseConfigurationReference = 1F680F82A20D444F998DD478 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = sweets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

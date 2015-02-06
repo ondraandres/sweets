@@ -12,7 +12,7 @@
 	<dict>
 		<key>5265B5C66EA58B59FFEF26A36DF4062EE52D7473</key>
 		<string>github.com:jakelisby/sweets.git</string>
-		<key>DA76CCF9C104D1427A6D76B6B108D228FBC9ADA2</key>
+		<key>E96AFEF3CE49739FD5718DE6785CFDA5956ACC53</key>
 		<string>github.com:jakelisby/sweets.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
@@ -20,8 +20,8 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5265B5C66EA58B59FFEF26A36DF4062EE52D7473</key>
-		<string>../../..</string>
-		<key>DA76CCF9C104D1427A6D76B6B108D228FBC9ADA2</key>
+		<string>../..</string>
+		<key>E96AFEF3CE49739FD5718DE6785CFDA5956ACC53</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -29,7 +29,7 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DA76CCF9C104D1427A6D76B6B108D228FBC9ADA2</string>
+	<string>E96AFEF3CE49739FD5718DE6785CFDA5956ACC53</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -38,13 +38,13 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>5265B5C66EA58B59FFEF26A36DF4062EE52D7473</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DA76CCF9C104D1427A6D76B6B108D228FBC9ADA2</string>
+			<string>E96AFEF3CE49739FD5718DE6785CFDA5956ACC53</string>
 			<key>IDESourceControlWCCName</key>
 			<string>sweets</string>
 		</dict>

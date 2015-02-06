@@ -13,7 +13,6 @@
 @property (strong, nonatomic) NSDictionary *facebookData;
 @property (strong, nonatomic) NSString *consultantID;
 @property (strong, nonatomic) NSURL *facebookProfileURL;
-@property (strong, nonatomic) NSDictionary *memberData;
 @property (nonatomic, retain) UIView *inputAccView;
 
 @end

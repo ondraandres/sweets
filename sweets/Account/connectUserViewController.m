@@ -26,12 +26,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *lnameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
-@property (weak, nonatomic) IBOutlet UILabel *fullNameDisplay;
-@property (weak, nonatomic) IBOutlet UILabel *emailDisplay;
-@property (weak, nonatomic) IBOutlet UILabel *phoneDisplay;
-- (IBAction)verifiedMemberDidPress:(id)sender;
-- (IBAction)notVerifiedMemberDidPress:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *moreInfoformView;
+- (IBAction)tryAgainDidPress:(id)sender;
 
 @end
 
@@ -53,10 +49,10 @@
     self.modalFrame.layer.cornerRadius = 5;
     self.modalFrame.layer.masksToBounds = YES;
     
-    self.profileImage.layer.cornerRadius = 55;
+    self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
     self.profileImage.layer.masksToBounds = YES;
     
-    if (self.getStartedButton || self.fullNameDisplay){
+    if (self.getStartedButton){
         FBRequest *request = [FBRequest requestForMe];
         [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
             if (!error) {
@@ -81,12 +77,26 @@
                  }];
             }
         }];
-        if (self.fullNameDisplay){
-            self.fullNameDisplay.text = self.memberData[@"mkName"];
-            self.emailDisplay.text = self.memberData[@"mkEmail"];
-            self.phoneDisplay.text = self.memberData[@"mkPhone"];
-            self.consultantID = self.memberData[@"mkID"];
-        }
+        PFQuery *query = [PFQuery queryWithClassName:@"Members"];
+        [query whereKey:@"consultantNumber" equalTo:self.consultantID];
+        [query getFirstObjectInBackgroundWithBlock:^(PFObject *member, NSError *error) {
+            if (!member) {
+                NSLog(@"No Member Found");
+            } else {
+                if (member[@"consultantFName"]){
+                    self.fnameTextField.text = member[@"consultantFName"];
+                }
+                if (member[@"consultantLName"]){
+                    self.lnameTextField.text = member[@"consultantLName"];
+                }
+                if (member[@"consultantEmail"]){
+                    self.emailTextField.text = member[@"consultantEmail"];
+                }
+                if (member[@"consultantPhone"]){
+                    self.phoneTextField.text = member[@"consultantPhone"];
+                }
+            }
+        }];
     }
 }
 
@@ -143,7 +153,9 @@
 }
 
 -(void)checkUser{
-    NSString *consultantID = self.consultantIDField.text;
+    self.findMeButton.working = YES;
+    self.findMeButton.enabled = NO;
+    NSString *consultantID = [self.consultantIDField.text uppercaseString];
     if([consultantID length] == 6){
         [self dismissViewControllerAnimated:YES completion:^{
             [[NSNotificationCenter defaultCenter] postNotificationName:@"checkNewUser" object:consultantID];
@@ -164,88 +176,111 @@
         [newalertController addAction:newcancelAction];
         [self presentViewController:newalertController animated:YES completion:nil];
     }
+    self.findMeButton.working = NO;
+    self.findMeButton.enabled = YES;
 }
 - (IBAction)getStartedDidPress:(id)sender {
     [self saveUserData];
 }
 -(void)saveUserData{
-    if (self.getStartedButton){
-        if ([self.fnameTextField.text isEqualToString:@""]){ 
-            UIAlertView *fnameAlert = [[UIAlertView alloc] initWithTitle:@"Something was Missed" message:@"Sorry about this, but a first name is required to move forward." delegate:self
-                                                       cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            
-            [fnameAlert show];
-        } else if ([self.lnameTextField.text isEqualToString:@""]){
-            UIAlertView *lnameAlert = [[UIAlertView alloc] initWithTitle:@"Something was Missed" message:@"Sorry about this, but a last name is required to move forward." delegate:self
-                                                       cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            
-            [lnameAlert show];
-        } else if ([self.emailTextField.text isEqualToString:@""]){
-            UIAlertView *emailAlert = [[UIAlertView alloc] initWithTitle:@"Something was Missed" message:@"Sorry about this, but an email address is required to move forward." delegate:self
+    self.getStartedButton.working = YES;
+    self.getStartedButton.enabled = NO;
+    NSString *facebookAvatarURL = [self.facebookProfileURL absoluteString];
+    if ([self.fnameTextField.text isEqualToString:@""]){
+        UIAlertView *fnameAlert = [[UIAlertView alloc] initWithTitle:@"Something was Missed" message:@"Sorry about this, but a first name is required to move forward." delegate:self
+                                                   cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [fnameAlert show];
+    } else if ([self.lnameTextField.text isEqualToString:@""]){
+        UIAlertView *lnameAlert = [[UIAlertView alloc] initWithTitle:@"Something was Missed" message:@"Sorry about this, but a last name is required to move forward." delegate:self
+                                                   cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [lnameAlert show];
+    } else if ([self.emailTextField.text isEqualToString:@""]){
+        UIAlertView *emailAlert = [[UIAlertView alloc] initWithTitle:@"Something was Missed" message:@"Sorry about this, but an email address is required to move forward." delegate:self
+                                                   cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [emailAlert show];
+    } else if ([self.phoneTextField.text isEqualToString:@""]){
+        UIAlertView *phoneAlert = [[UIAlertView alloc] initWithTitle:@"Something was Missed" message:@"Sorry about this, but a phone number is required to move forward." delegate:self
+                                                   cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [phoneAlert show];
+    } else {
+        NSString *emailString = self.emailTextField.text; // storing the entered email in a string.**
+        // Regular expression to checl the email format.
+        NSString *emailReg = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+        NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",emailReg];
+        if (([emailTest evaluateWithObject:emailString] != YES))
+        {
+            UIAlertView *emailAlert = [[UIAlertView alloc] initWithTitle:@"Issue with Email" message:@"We're sorry, the email address you entered is not correctly formatted. Use this format email@email.com" delegate:self
                                                        cancelButtonTitle:@"OK" otherButtonTitles:nil];
             
             [emailAlert show];
-        } else if ([self.phoneTextField.text isEqualToString:@""]){
-            UIAlertView *phoneAlert = [[UIAlertView alloc] initWithTitle:@"Something was Missed" message:@"Sorry about this, but a phone number is required to move forward." delegate:self
-                                                       cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            
-            [phoneAlert show];
         } else {
-            NSString *emailString = self.emailTextField.text; // storing the entered email in a string.**
-            // Regular expression to checl the email format.
-            NSString *emailReg = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-            NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",emailReg];
-            if (([emailTest evaluateWithObject:emailString] != YES))
-            {
-                UIAlertView *emailAlert = [[UIAlertView alloc] initWithTitle:@"Issue with Email" message:@"We're sorry, the email address you entered is not correctly formatted. Use this format email@email.com" delegate:self
+            NSString *phoneNumber = [[self.phoneTextField.text componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+            NSString *phoneRegex = @"[235689][0-9]{6}([0-9]{3})?";
+            NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegex];
+            if(([phoneTest evaluateWithObject:phoneNumber] != YES)){
+                UIAlertView *phoneAlert = [[UIAlertView alloc] initWithTitle:@"Issue with Phone Number" message:@"We're sorry, the phone number you entered is not correctly formatted. Please only use nine numbers." delegate:self
                                                            cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 
-                [emailAlert show];
-            } else {
-                NSString *phoneNumber = self.phoneTextField.text;
-                NSString *phoneRegex = @"[235689][0-9]{6}([0-9]{3})?";
-                NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegex];
-                if(([phoneTest evaluateWithObject:phoneNumber] != YES)){
-                    UIAlertView *phoneAlert = [[UIAlertView alloc] initWithTitle:@"Issue with Phone Number" message:@"We're sorry, the phone number you entered is not correctly formatted. Please only use nine numbers." delegate:self
-                                                               cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                    
-                    [phoneAlert show];
-                } else{
-                    PFObject *member = [PFObject objectWithClassName:@"Members"];
-                    member[@"consultantID"] = self.consultantID;
-                    member[@"profileFName"] = self.fnameTextField.text;
-                    member[@"profileLName"] = self.lnameTextField.text;
-                    member[@"profileEmail"] = self.emailTextField.text;
-                    member[@"profilePhone"] = self.phoneTextField.text;
-                    member[@"memberFacebookID"] = self.facebookData[@"id"];
-                    member[@"facebookLocation"] = self.facebookData[@"location"][@"name"];
-                    member[@"facebookBirthday"] = self.facebookData[@"birthday"];
-                    member[@"facebookProfileImage"] = self.facebookProfileURL;
-                    member[@"didConnectDetails"] = @"1";
-                    [member setObject:[PFUser currentUser] forKey:@"memberUser"];
-                    [member saveEventually];
-                    PFUser *currentUser = [PFUser currentUser];
-                    currentUser[@"didConnectDetails"] = @"1";
-                    [currentUser saveEventually];
-                }
+                [phoneAlert show];
+            } else{
+                PFQuery *query = [PFQuery queryWithClassName:@"Members"];
+                [query whereKey:@"consultantNumber" equalTo:self.consultantID];
+                [query getFirstObjectInBackgroundWithBlock:^(PFObject *member, NSError *error) {
+                    if (!member) {
+                        PFObject *member = [PFObject objectWithClassName:@"Members"];
+                        member[@"consultantNumber"] = self.consultantID;
+                        member[@"profileFName"] = self.fnameTextField.text;
+                        member[@"profileLName"] = self.lnameTextField.text;
+                        member[@"profileEmail"] = self.emailTextField.text;
+                        member[@"profilePhone"] = phoneNumber;
+                        member[@"memberFacebookID"] = self.facebookData[@"id"];
+                        member[@"facebookLocation"] = self.facebookData[@"location"][@"name"];
+                        member[@"facebookBirthday"] = self.facebookData[@"birthday"];
+                        member[@"facebookProfileImage"] = facebookAvatarURL;
+                        NSString *fname = self.fnameTextField.text;
+                        NSString *lname = self.lnameTextField.text;
+                        NSData *imageData = UIImagePNGRepresentation(self.profileImage.image);
+                        NSString *filename = [NSString stringWithFormat:@"%@%@-profileImage.png",fname,lname];
+                        PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
+                        member[@"profileImage"] = imageFile;
+                        [member setObject:[PFUser currentUser] forKey:@"memberUser"];
+                        NSLog(@"%@",member);
+                        [member saveInBackground];
+                    } else {
+                        member[@"profileFName"] = self.fnameTextField.text;
+                        member[@"profileLName"] = self.lnameTextField.text;
+                        member[@"profileEmail"] = self.emailTextField.text;
+                        member[@"profilePhone"] = phoneNumber;
+                        member[@"memberFacebookID"] = self.facebookData[@"id"];
+                        member[@"facebookLocation"] = self.facebookData[@"location"][@"name"];
+                        member[@"facebookBirthday"] = self.facebookData[@"birthday"];
+                        member[@"facebookProfileImage"] = facebookAvatarURL;
+                        NSString *fname = self.fnameTextField.text;
+                        NSString *lname = self.lnameTextField.text;
+                        NSData *imageData = UIImagePNGRepresentation(self.profileImage.image);
+                        NSString *filename = [NSString stringWithFormat:@"%@%@-profileImage.png",fname,lname];
+                        PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
+                        member[@"profileImage"] = imageFile;
+                        [member setObject:[PFUser currentUser] forKey:@"memberUser"];
+                        [member saveInBackground];
+                    }
+                }];
+                PFUser *currentUser = [PFUser currentUser];
+                currentUser[@"didConnectDetails"] = @"1";
+                [currentUser saveEventually];
+                [self dismissViewControllerAnimated:YES completion:^{
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"userVerified" object:self];
+                }];
             }
         }
     }
-    if (self.fullNameDisplay){
-        PFQuery *query = [PFQuery queryWithClassName:@"Members"];
-        // Retrieve the object by id
-        [query getObjectInBackgroundWithId:self.memberData[@"objectID"] block:^(PFObject *member, NSError *error) {
-            member[@"memberFacebookID"] = self.facebookData[@"id"];
-            member[@"facebookLocation"] = self.facebookData[@"location"][@"name"];
-            member[@"facebookBirthday"] = self.facebookData[@"birthday"];
-            member[@"facebookProfileImage"] = self.facebookProfileURL;
-            [member setObject:[PFUser currentUser] forKey:@"memberUser"];
-            [member saveEventually];
-        }];
-        PFUser *currentUser = [PFUser currentUser];
-        currentUser[@"didConnectDetails"] = @"1";
-        [currentUser saveEventually];
-    }
+        
+    self.getStartedButton.working = NO;
+    self.getStartedButton.enabled = YES;
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
@@ -278,11 +313,7 @@
 -(void)doneTyping{
     [self.phoneTextField resignFirstResponder];
 }
-- (IBAction)verifiedMemberDidPress:(id)sender {
-    [self saveUserData];
-}
-
-- (IBAction)notVerifiedMemberDidPress:(id)sender {
+- (IBAction)tryAgainDidPress:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
         [[NSNotificationCenter defaultCenter] postNotificationName:@"tryUserAgain" object:self];
     }];

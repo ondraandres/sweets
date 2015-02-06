@@ -24,47 +24,29 @@
 #define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 22
 #define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK 0
 
-// FontAwesomeKit
-#define COCOAPODS_POD_AVAILABLE_FontAwesomeKit
-#define COCOAPODS_VERSION_MAJOR_FontAwesomeKit 2
-#define COCOAPODS_VERSION_MINOR_FontAwesomeKit 2
-#define COCOAPODS_VERSION_PATCH_FontAwesomeKit 0
+// JSQMessagesViewController
+#define COCOAPODS_POD_AVAILABLE_JSQMessagesViewController
+#define COCOAPODS_VERSION_MAJOR_JSQMessagesViewController 6
+#define COCOAPODS_VERSION_MINOR_JSQMessagesViewController 1
+#define COCOAPODS_VERSION_PATCH_JSQMessagesViewController 3
 
-// FontAwesomeKit/Core
-#define COCOAPODS_POD_AVAILABLE_FontAwesomeKit_Core
-#define COCOAPODS_VERSION_MAJOR_FontAwesomeKit_Core 2
-#define COCOAPODS_VERSION_MINOR_FontAwesomeKit_Core 2
-#define COCOAPODS_VERSION_PATCH_FontAwesomeKit_Core 0
-
-// FontAwesomeKit/FontAwesome
-#define COCOAPODS_POD_AVAILABLE_FontAwesomeKit_FontAwesome
-#define COCOAPODS_VERSION_MAJOR_FontAwesomeKit_FontAwesome 2
-#define COCOAPODS_VERSION_MINOR_FontAwesomeKit_FontAwesome 2
-#define COCOAPODS_VERSION_PATCH_FontAwesomeKit_FontAwesome 0
-
-// FontAwesomeKit/FoundationIcons
-#define COCOAPODS_POD_AVAILABLE_FontAwesomeKit_FoundationIcons
-#define COCOAPODS_VERSION_MAJOR_FontAwesomeKit_FoundationIcons 2
-#define COCOAPODS_VERSION_MINOR_FontAwesomeKit_FoundationIcons 2
-#define COCOAPODS_VERSION_PATCH_FontAwesomeKit_FoundationIcons 0
-
-// FontAwesomeKit/IonIcons
-#define COCOAPODS_POD_AVAILABLE_FontAwesomeKit_IonIcons
-#define COCOAPODS_VERSION_MAJOR_FontAwesomeKit_IonIcons 2
-#define COCOAPODS_VERSION_MINOR_FontAwesomeKit_IonIcons 2
-#define COCOAPODS_VERSION_PATCH_FontAwesomeKit_IonIcons 0
-
-// FontAwesomeKit/Zocial
-#define COCOAPODS_POD_AVAILABLE_FontAwesomeKit_Zocial
-#define COCOAPODS_VERSION_MAJOR_FontAwesomeKit_Zocial 2
-#define COCOAPODS_VERSION_MINOR_FontAwesomeKit_Zocial 2
-#define COCOAPODS_VERSION_PATCH_FontAwesomeKit_Zocial 0
+// JSQSystemSoundPlayer
+#define COCOAPODS_POD_AVAILABLE_JSQSystemSoundPlayer
+#define COCOAPODS_VERSION_MAJOR_JSQSystemSoundPlayer 2
+#define COCOAPODS_VERSION_MINOR_JSQSystemSoundPlayer 0
+#define COCOAPODS_VERSION_PATCH_JSQSystemSoundPlayer 1
 
 // KBRoundedButton
 #define COCOAPODS_POD_AVAILABLE_KBRoundedButton
 #define COCOAPODS_VERSION_MAJOR_KBRoundedButton 1
 #define COCOAPODS_VERSION_MINOR_KBRoundedButton 0
 #define COCOAPODS_VERSION_PATCH_KBRoundedButton 2
+
+// MBProgressHUD
+#define COCOAPODS_POD_AVAILABLE_MBProgressHUD
+#define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
+#define COCOAPODS_VERSION_MINOR_MBProgressHUD 9
+#define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
 
 // PQFCustomLoaders
 #define COCOAPODS_POD_AVAILABLE_PQFCustomLoaders
@@ -102,6 +84,12 @@
 #define COCOAPODS_VERSION_MINOR_TCTableViewSearchController 1
 #define COCOAPODS_VERSION_PATCH_TCTableViewSearchController 0
 
+// THContactPicker
+#define COCOAPODS_POD_AVAILABLE_THContactPicker
+#define COCOAPODS_VERSION_MAJOR_THContactPicker 0
+#define COCOAPODS_VERSION_MINOR_THContactPicker 0
+#define COCOAPODS_VERSION_PATCH_THContactPicker 4
+
 // TPKeyboardAvoiding
 #define COCOAPODS_POD_AVAILABLE_TPKeyboardAvoiding
 #define COCOAPODS_VERSION_MAJOR_TPKeyboardAvoiding 1
@@ -113,4 +101,16 @@
 #define COCOAPODS_VERSION_MAJOR_UIColor_FlatColors 0
 #define COCOAPODS_VERSION_MINOR_UIColor_FlatColors 0
 #define COCOAPODS_VERSION_PATCH_UIColor_FlatColors 2
+
+// VBFPopFlatButton
+#define COCOAPODS_POD_AVAILABLE_VBFPopFlatButton
+#define COCOAPODS_VERSION_MAJOR_VBFPopFlatButton 0
+#define COCOAPODS_VERSION_MINOR_VBFPopFlatButton 0
+#define COCOAPODS_VERSION_PATCH_VBFPopFlatButton 6
+
+// pop
+#define COCOAPODS_POD_AVAILABLE_pop
+#define COCOAPODS_VERSION_MAJOR_pop 1
+#define COCOAPODS_VERSION_MINOR_pop 0
+#define COCOAPODS_VERSION_PATCH_pop 7
 
